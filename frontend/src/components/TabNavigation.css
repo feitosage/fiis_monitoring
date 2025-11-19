@@ -1,0 +1,185 @@
+/* 📑 TAB NAVIGATION - Premium Modern Design */
+
+.tab-navigation {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 0.75rem;
+  background: var(--bg-container);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-navigation::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--bull-primary) 50%,
+    transparent 100%);
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   🎯 TAB BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+
+.tab-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-bull);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tab-button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+/* Hover State */
+.tab-button:hover:not(.active) {
+  color: var(--text-secondary);
+  background: rgba(16, 185, 129, 0.05);
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
+}
+
+.tab-button:hover .tab-icon {
+  transform: scale(1.15);
+}
+
+/* Active State */
+.tab-button.active {
+  color: #fff;
+  background: var(--gradient-bull);
+  border-color: var(--bull-primary);
+  box-shadow: var(--shadow-md), var(--glow-bull);
+  transform: translateY(-3px);
+}
+
+.tab-button.active::before {
+  opacity: 1;
+}
+
+.tab-button.active .tab-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Focus State */
+.tab-button:focus-visible {
+  outline: 2px solid var(--bull-primary);
+  outline-offset: 4px;
+}
+
+/* Active State Press */
+.tab-button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ✨ ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.tab-navigation {
+  animation: tabSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tabSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   📱 RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .tab-navigation {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .tab-button {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .tab-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-navigation {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+  }
+
+  .tab-button:hover:not(.active),
+  .tab-button.active {
+    transform: translateY(0);
+  }
+}

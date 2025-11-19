@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* 🎨 Dark Theme Premium - Investment Focus */
+  
+  /* Background Layers */
+  --bg-base: #020617;           /* slate-950 */
+  --bg-container: #0f172a;      /* slate-900 */
+  --bg-card: #1e293b;           /* slate-800 */
+  --bg-elevated: #334155;       /* slate-700 */
+  --bg-hover: #475569;          /* slate-600 */
+  
+  /* Text Colors */
+  --text-primary: #f1f5f9;      /* slate-100 */
+  --text-secondary: #cbd5e1;    /* slate-300 */
+  --text-muted: #94a3b8;        /* slate-400 */
+  --text-dim: #cbd5e1;          /* slate-300 - MAIS CLARO para melhor legibilidade */
+  
+  /* Investment Colors - Bull Market */
+  --bull-primary: #10b981;      /* emerald-500 */
+  --bull-dark: #059669;         /* emerald-600 */
+  --bull-light: #34d399;        /* emerald-400 */
+  --bull-glow: rgba(16, 185, 129, 0.5);
+  
+  /* Investment Colors - Bear Market */
+  --bear-primary: #dc2626;      /* red-600 */
+  --bear-dark: #b91c1c;         /* red-700 */
+  --bear-light: #ef4444;        /* red-500 */
+  --bear-glow: rgba(220, 38, 38, 0.5);
+  
+  /* Accent Colors */
+  --accent-cyan: #06b6d4;       /* cyan-500 */
+  --accent-purple: #8b5cf6;     /* violet-500 */
+  --accent-gold: #f59e0b;       /* amber-500 */
+  
+  /* Borders & Dividers */
+  --border-subtle: #334155;     /* slate-700 */
+  --border-default: #475569;    /* slate-600 */
+  --border-strong: #64748b;     /* slate-500 */
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  
+  /* Glow Effects */
+  --glow-bull: 0 0 20px var(--bull-glow);
+  --glow-bear: 0 0 20px var(--bear-glow);
+  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
+  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+  
+  /* Gradients */
+  --gradient-bull: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-bear: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --gradient-neutral: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  
+  /* Typography */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  
+  /* Subtle gradient overlay */
+  background-image: 
+    radial-gradient(circle at 20% 10%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-container);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--bull-dark) 0%, var(--accent-purple) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--bg-container);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--bull-primary) 0%, var(--accent-cyan) 100%);
+  box-shadow: var(--glow-bull);
+}
+
+/* Selection */
+::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: var(--text-primary);
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--bull-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Utility Classes */
+.mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}

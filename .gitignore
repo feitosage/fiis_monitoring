@@ -1,0 +1,102 @@
+# ════════════════════════════════════════════════════════════════
+# GITIGNORE - FII YAHOO FINANCE MONITOR
+# ════════════════════════════════════════════════════════════════
+
+# ──────────────────────────────────────────────────────────────────
+# CREDENCIAIS E VARIÁVEIS DE AMBIENTE (IMPORTANTE!)
+# ──────────────────────────────────────────────────────────────────
+# Arquivo .env contém chaves sensíveis (OpenAI, Telegram)
+# NUNCA commit arquivos .env no Git!
+.env
+backend/.env
+frontend/.env
+*.env.local
+*.env.development
+*.env.production
+*.env.test
+*.env.*.local
+
+# Exceção: permite .env.example (template sem credenciais)
+!.env.example
+!backend/.env.example
+
+# ──────────────────────────────────────────────────────────────────
+# PYTHON
+# ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+backend/venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ──────────────────────────────────────────────────────────────────
+# NODE / JAVASCRIPT
+# ──────────────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json.bak
+
+# ──────────────────────────────────────────────────────────────────
+# LOGS E DATABASES
+# ──────────────────────────────────────────────────────────────────
+*.log
+backend.log
+frontend.log
+startup.log
+telegram_bot.log
+*.sqlite
+*.db
+
+# ──────────────────────────────────────────────────────────────────
+# SISTEMA OPERACIONAL
+# ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ──────────────────────────────────────────────────────────────────
+# IDEs E EDITORES
+# ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ──────────────────────────────────────────────────────────────────
+# BUILD E DISTRIBUIÇÃO
+# ──────────────────────────────────────────────────────────────────
+dist/
+build/
+frontend/dist/
+frontend/build/
+*.pyc
+
+# ──────────────────────────────────────────────────────────────────
+# ARQUIVOS TEMPORÁRIOS
+# ──────────────────────────────────────────────────────────────────
+frontend/vite.config.temp.mjs
+frontend/vite.config.temp.js
+*.tmp
+*.bak
+*.backup
+.cache/
+
+# ──────────────────────────────────────────────────────────────────
+# DOCUMENTAÇÃO ANTIGA (mantém apenas README.md consolidado)
+# ──────────────────────────────────────────────────────────────────
+# Os arquivos de documentação redundantes podem ser removidos
+# após consolidação

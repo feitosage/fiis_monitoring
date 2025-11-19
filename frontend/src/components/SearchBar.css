@@ -1,0 +1,134 @@
+/* 🔍 SEARCH BAR - Premium Input Design */
+
+.search-bar-container {
+  margin-bottom: 2rem;
+  animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-bar {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   🎨 INPUT FIELD
+   ═══════════════════════════════════════════════════════════════ */
+
+.search-input {
+  width: 100%;
+  padding: 1.25rem 3.5rem 1.25rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-subtle);
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-md);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+}
+
+.search-input::placeholder {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.search-input:hover {
+  border-color: var(--border-default);
+  background: var(--bg-hover);
+}
+
+.search-input:focus {
+  border-color: var(--bull-primary);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-lg), 0 0 0 4px rgba(16, 185, 129, 0.1), var(--glow-bull);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   🔍 SEARCH ICON
+   ═══════════════════════════════════════════════════════════════ */
+
+.search-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.search-input:focus ~ .search-icon {
+  color: var(--bull-primary);
+  filter: drop-shadow(var(--glow-bull));
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   💡 HELPER TEXT
+   ═══════════════════════════════════════════════════════════════ */
+
+.search-hint {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.search-hint-icon {
+  font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   📱 RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .search-icon {
+    right: 1.25rem;
+    font-size: 1.3rem;
+  }
+
+  .search-hint {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    padding: 0.875rem 2.5rem 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .search-icon {
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+}
